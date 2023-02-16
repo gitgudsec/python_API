@@ -1,9 +1,13 @@
-# from fastapi import FastAPI
+from fastapi import FastAPI
 
-# app = FastAPI()
+app = FastAPI()
 
-# @app.get("/")
-# async def root():
-#     return {"message": "Hello World"}
+# this is called a path operation
+# decorator @app.get("/")
+# function root():
 
-# testing to see if this addition works
+@app.get("/")
+def root():
+    return {"message": "Hello World"}
+
+# note that we use a dictionary, but fastAPI automatically converts this to JSON
