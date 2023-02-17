@@ -16,7 +16,12 @@ def root():
 
 # let's create a new path operation
 # this one will go and fetch social media posts
+# since we are retrieving we will be using GET
 
+@app.get("/posts")
 def get_posts():
     # here is our logic for retrieving posts - add later
-    
+    return {"data": "This is the message"}
+
+# now let's create a POST request
+@app.post("/createposts")
