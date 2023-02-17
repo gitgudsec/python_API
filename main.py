@@ -4,7 +4,9 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-
+class Post(BaseModel):
+    title: 
+    content: 
 
 
 
