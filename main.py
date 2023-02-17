@@ -23,7 +23,8 @@ def get_posts():
     # here is our logic for retrieving posts - add later
     return {"data": "This is the message"}
 
-# now let's create a POST request
+from fastapi.params import Body
+
 @app.post("/createposts")
-def create_posts():
+def create_posts(payLoad: dict = Body(...)):
     return{"message": "Post has successfully been created"}
