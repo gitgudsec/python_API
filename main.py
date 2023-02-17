@@ -29,5 +29,6 @@ def create_posts(new_post: Post):
     print(new_post.title)
     print(new_post.content)
     print(new_post.published)
+    print(new_post.rating)
     return {"data": "new post"}
 
