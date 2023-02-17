@@ -12,4 +12,11 @@ app = FastAPI()
 
 @app.get("/")
 def root():
-    return {"message": "What's the word, ma NURD."}
+    return {"message": "What's the word, ma POOP."}
+
+# let's create a new path operation
+# this one will go and fetch social media posts
+
+def get_posts():
+    # here is our logic for retrieving posts - add later
+    
