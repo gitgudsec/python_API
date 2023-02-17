@@ -25,3 +25,5 @@ def get_posts():
 
 # now let's create a POST request
 @app.post("/createposts")
+def create_posts():
+    return{"message": "Post has successfully been created"}
