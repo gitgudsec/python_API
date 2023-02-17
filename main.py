@@ -1,32 +1,19 @@
 from fastapi import FastAPI
+from fastapi.params import Body
+from pydantic import BaseModel
 
 app = FastAPI()
 
-# this is called a path operation - decorator + function
 
-# decorator @app.get("/"): this is what takes it from simply being a function to an API
-# we use app (from line 3) and then specify to use a GET method, we can use others too - POST etc
-# we also specify the path ("/"), which in this case refers to the root path
 
-# function root(): note that we use a dictionary, but fastAPI automatically converts this to JSON
+
 
 @app.get("/")
 def root():
     return {"message": "What's the word, ma POOP."}
 
-# let's create a new path operation
-# this one will go and fetch social media posts
-# since we are retrieving we will be using GET
-
-@app.get("/posts")
-def get_posts():
-    # here is our logic for retrieving posts - add later
-    return {"data": "This is the message"}
-
-from fastapi.params import Body
-
 @app.post("/createposts")
 def create_posts(payload: dict = Body(...)):
     print(payload)
     return {"new_post": f"title: {payload['title']} content: {payload['content']}"}
-    
+
