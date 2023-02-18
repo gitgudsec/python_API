@@ -10,7 +10,7 @@ class Post(BaseModel):
     title: str
     content: str
 
-    # we can also assign default values fro m the go
+    # we can also assign default values from the go
     # note if you assign a default value it is no longer required
     published: bool = True
 
@@ -24,11 +24,9 @@ def root():
     return {"message": "What's the word, ma POOP."}
 
 
-@app.post("/createposts")
+@app.post("/posts")
 def create_posts(new_post: Post):
-    print(new_post.title)
-    print(new_post.content)
-    print(new_post.published)
-    print(new_post.rating)
+    print(new_post)
+    print(new_post.dict())
     return {"data": "new post"}
 
