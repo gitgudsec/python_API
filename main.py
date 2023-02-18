@@ -21,7 +21,7 @@ class Post(BaseModel):
 
 @app.get("/")
 def root():
-    return {"message": "What's the word, ma POOP."}
+    return {"data": my_posts}
 
 my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1},
             {"title": "numbchuc Skillz", "content": "Pretty good with a bow", "id": 69}]
