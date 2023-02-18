@@ -23,7 +23,9 @@ class Post(BaseModel):
 def root():
     return {"message": "What's the word, ma POOP."}
 
-my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1}]
+my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1},
+            {"title": "numbchuc Skillz", "content": "Pretty good with a bow", "id": 69}]
+
 
 
 @app.post("/posts")
