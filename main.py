@@ -10,7 +10,7 @@ class Post(BaseModel):
     title: str
     content: str
 
-    # we can also assign default values from the go
+    # we can also assign default values fro m the go
     # note if you assign a default value it is no longer required
     published: bool = True
 
