@@ -23,10 +23,18 @@ class Post(BaseModel):
 def root():
     return {"message": "What's the word, ma POOP."}
 
+my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1}]
+
 
 @app.post("/posts")
 def create_posts(new_post: Post):
     print(new_post)
     print(new_post.dict())
     return {"data": "new post"}
+    
 
+# create functionality to persiste - ie save - the data
+# for now we will simply store it in memory - start up top line 26
+# later when we are ready we will integrate with SQL
+# Note when saving to SQL it will automatically assign an ID for every post saved
+# However since we are saving to a variable, we need to create
