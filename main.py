@@ -31,8 +31,9 @@ my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1
 
 @app.post("/posts")
 def create_posts(new_post: Post):
-  
-    my_posts.append(post.dict())
+    post_dict = post.dict()
+    post_dict['id'] = randrange(0,1000000000) 
+    my_posts.append(post_dict)
     return {"data": "new post"}
 
 
