@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from fastapi.params import Body
 from pydantic import BaseModel
 from typing import Optional
+from random import randrange
 
 app = FastAPI()
 
@@ -30,9 +31,11 @@ my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1
 
 @app.post("/posts")
 def create_posts(new_post: Post):
-    print(new_post)
-    print(new_post.dict())
+  
+    my_posts.append(post.dict())
     return {"data": "new post"}
+
+
     
 
 # create functionality to persiste - ie save - the data
