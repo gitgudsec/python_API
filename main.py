@@ -11,7 +11,7 @@ class Post(BaseModel):
     content: str
 
     # we can also assign default values from the go
-    # note if you assign a default value it is no longer required
+    # note if you assign a default value it is n o longer required
     published: bool = True
 
     # if we want a value to be optional, but if user does not provide it defaults to 0
