@@ -15,7 +15,7 @@ class Post(BaseModel):
     # note if you assign a default value it is n o longer required
     published: bool = True
 
-    # if we want a value to be optional, but if user does not provide it defaults to 0
+    # if we want a value to be optional, but if  user does not provide it defaults to 0
     # note: special library we need to import for this one
     rating: Optional[int] = None
 
