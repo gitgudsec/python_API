@@ -12,7 +12,7 @@ class Post(BaseModel):
     content: str
 
     # we can also assign default values from the go
-    # note if you assign a default value it is n o longer required x
+    # note if you assign a default value it is no longer required 
     published: bool = True
 
     # if we want a value to be optional, but if   user does not provide it defaults to 0
@@ -22,19 +22,29 @@ class Post(BaseModel):
 
 @app.get("/")
 def root():
-    return {"data": my_posts}
-
-my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1},
-            {"title": "numbchuc Skillz", "content": "Pretty good with a bow", "id": 69}]
+    return {"message": "y0y0y0y0y0y0"}
 
 
+@app.get("/posts")
+def get_posts():
+    return{"data": "Here is the post"}
 
-@app.post("/posts")
-def create_posts(post: Post):
-    post_dict = post.dict()
-    post_dict['id'] = randrange(0,1000000000) 
-    my_posts.append(post_dict)
-    return {"data": post_dict}
+
+
+
+#     return {"data": my_posts}
+
+# my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1},
+#             {"title": "numbchuc Skillz", "content": "Pretty good with a bow", "id": 69}]
+
+
+
+# @app.post("/posts")
+# def create_posts(post: Post):
+#     post_dict = post.dict()
+#     post_dict['id'] = randrange(0,1000000000) 
+#     my_posts.append(post_dict)
+#     return {"data": post_dict}
 
 
     
