@@ -12,7 +12,7 @@ class Post(BaseModel):
     content: str
 
     # we can also assign default values from the go
-    # note if you assign a default value it is n o longer required
+    # note if you assign a default value it is n o longer required x
     published: bool = True
 
     # if we want a value to be optional, but if   user does not provide it defaults to 0
@@ -30,11 +30,11 @@ my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1
 
 
 @app.post("/posts")
-def create_posts(new_post: Post):
+def create_posts(post: Post):
     post_dict = post.dict()
     post_dict['id'] = randrange(0,1000000000) 
     my_posts.append(post_dict)
-    return {"data": "new post"}
+    return {"data": post_dict}
 
 
     
