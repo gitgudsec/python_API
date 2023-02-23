@@ -22,6 +22,12 @@ def get_posts():
 
 @app.post("/posts")
 def create_post(post: Post):
-    print(post.dict())
-    print(post)
-    return {"data": "Chapstick"}
+    # here it takes the values the JSON values I send it with POST request
+    # and convert it to a dictionary
+    post_dict = post.dict()
+    # here it reassigns the id value a random number in a large range
+    post_dict["id"] = randrange(0, 1000000)
+    # now we take the new data field sent with POST, and we add it our my_posts list (of dictionaries)
+    my_posts.append(post_dict)
+    # this returns the new updated list to the sender of request - thus we respond with original "db" updated with the value they just provided
+    return {"data": my_posts}    
