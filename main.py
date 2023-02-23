@@ -36,6 +36,8 @@ def create_post(post: Post):
 
 # we can see here now if the user provides us with an ID, it will use that in URL to only load that
 @app.get("/posts/{id}")
-def get_post()
+def get_post(id):
+    print(id)
+    return {"post_detail": f"Here is post {id}"}
     
 
