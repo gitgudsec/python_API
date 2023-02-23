@@ -15,6 +15,13 @@ class Post(BaseModel):
 my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1},
             {"title": "numbchuc Skillz", "content": "Pretty good with a bow", "id": 69}]
 
+def find_post(id):
+    for p in my_posts:
+        if p["id"] == id:
+            return p
+
+    
+
 @app.get("/posts")
 def get_posts():
     print ("Success")
@@ -37,7 +44,7 @@ def create_post(post: Post):
 # we can see here now if the user provides us with an ID, it will use that in URL to only load that
 @app.get("/posts/{id}")
 def get_post(id):
-    print(id)
-    return {"post_detail": f"Here is post {id}"}
+    post = find_post(int(id))
+    return {"post_detail": post}
     
 
