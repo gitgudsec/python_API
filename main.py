@@ -29,5 +29,13 @@ def create_post(post: Post):
     post_dict["id"] = randrange(0, 1000000)
     # now we take the new data field sent with POST, and we add it our my_posts list (of dictionaries)
     my_posts.append(post_dict)
+    # this prints the newly added post to console
+    print(post_dict)
     # this returns the new updated list to the sender of request - thus we respond with original "db" updated with the value they just provided
     return {"data": my_posts}    
+
+# we can see here now if the user provides us with an ID, it will use that in URL to only load that
+@app.get("/posts/{id}")
+def get_post()
+    
+
