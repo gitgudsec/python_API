@@ -1,11 +1,13 @@
 from fastapi import FastAPI
 from fastapi.params import Body
 from pydantic import BaseModel
-from typing import Optionaltopnal;
+from typing import Optional
+from random import randrange
+
 
 app = FastAPI()
 
-class Post(BaseModel): #
+class Post(BaseModel): 
     title: str
     content: str
     id: int
@@ -15,6 +17,7 @@ my_posts = [{"title": "title of post 1", "content": "content of post 1", "id": 1
 
 @app.get("/posts")
 def get_posts():
+    print ("Success")
     return {"data": my_posts}
 
 @app.post("/posts")
