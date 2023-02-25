@@ -39,13 +39,17 @@ def create_post(post: Post):
     # this returns the new updated list to the sender of request - thus we respond with original "db" updated with the value they just provided
     return {"data": my_posts}    
 
+@app.get("/posts/latest")
+def get_latest_post():
+    post = my_posts[len(my_posts)-1]
+    return {"detail": post}
+
 # we can see here now if the user provides us with an ID, it will use that in URL to only load that
 @app.get("/posts/{id}")
 def get_post(id: int):
     post = find_post(int(id))
     return {"post_detail": post}
     
-@app.get("posts/latest")
-def get_latest_post():
-    my_posts[len(my_posts)-1]
-    return {"edtail"}
+
+
+
