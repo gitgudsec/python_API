@@ -45,4 +45,7 @@ def get_post(id: int):
     post = find_post(int(id))
     return {"post_detail": post}
     
-#
+@app.get("posts/latest")
+def get_latest_post():
+    my_posts[len(my_posts)-1]
+    return {"edtail"}
