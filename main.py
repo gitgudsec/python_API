@@ -20,8 +20,6 @@ def find_post(id):
         if p["id"] == id:
             return p
 
-    
-
 @app.get("/posts")
 def get_posts():
     print ("Success")
