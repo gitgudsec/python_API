@@ -48,6 +48,9 @@ def get_latest_post():
 @app.get("/posts/{id}")
 def get_post(id: int):
     post = find_post(int(id))
+    # If it could not find id it will execute the message
+    if post == None:
+        return("That id does not exist.")
     return {"post_detail": post}
     
 
