@@ -1,9 +1,9 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from fastapi.params import Body
 from pydantic import BaseModel
 from typing import Optional
 from random import randrange
-
+#
 
 app = FastAPI()
 
@@ -46,11 +46,12 @@ def get_latest_post():
 
 # we can see here now if the user provides us with an ID, it will use that in URL to only load that
 @app.get("/posts/{id}")
-def get_post(id: int):
+def get_post(id: int, response: Response):
     post = find_post(int(id))
     # If it could not find id it will execute the message
-    if post == None:
-        return("That id does not exist.")
+    if not post:
+        response.status_code = 404
+        return("404 - That id does not exist.")
     return {"post_detail": post}
     
 
